@@ -63,10 +63,8 @@
       $("#inputCEP").change(function (){
         const valor = $("#inputCEP").val();
         if (valor === "55157010"){
-          $("#selectEstados").val("PE");
-          $('#selectEstados').trigger("change");
-          $("#selectCidades").val("Belo Jardim");
-          $('#selectCidades').trigger("change");
+          $("#selectEstados").val("PE").trigger("change");
+          $("#selectCidades").val("Belo Jardim").trigger("change");
         } else if (valor === "55200000"){
           $("#selectEstados").val("PE");
           $('#selectEstados').trigger("change");
