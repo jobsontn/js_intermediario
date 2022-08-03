@@ -14,6 +14,7 @@ app.use(express.static(path.join(process.cwd(), 'public')));
 
 //Rotas
 app.get('/', (req, res) => {
+  //res.send("OK");
   res.status(200).render('index');
 });
 
