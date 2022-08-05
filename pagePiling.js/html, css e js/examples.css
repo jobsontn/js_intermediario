@@ -1,4 +1,3 @@
-@CHARSET "ISO-8859-1";
 /* Reset CSS
  * --------------------------------------- */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -300,8 +299,7 @@ p{
 	opacity: 0.6;
 }
 
-/* Overwriting fullPage.js tooltip color
-* --------------------------------------- */
+
 #pp-nav.custom .pp-tooltip{
 	color: #AAA;
 }
