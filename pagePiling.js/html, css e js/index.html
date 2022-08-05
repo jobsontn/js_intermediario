@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css">
+    <link rel="stylesheet" href="examples.css">
+    <link rel="stylesheet" href="estilo.css">
+    <title>pagePiling.js</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li data-menuanchor="section1" class="active"><a href="#section1">Inicial</a></li>
+        <li data-menuanchor="section2"><a href="#section2">O projeto</a></li>
+        <li data-menuanchor="section3"><a href="#section3">Vídeo</a></li>
+        <li data-menuanchor="section4"><a href="#section4">Sobre</a></li>
+    </ul>
+
+
+    <div id="pagepiling">
+        <div class="section" id="section1">
+            <h1>Moura Tech</h1>
+            <p>Grupo Moura dá início ao projeto de desenvolvimento de talentos na área de TI</p>
+            <img src="logo01.jpeg" alt="Logo Moura Tech" />
+            <br />
+
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1>O que é?</h1>
+                <p>É uma iniciativa que tem como objetivo criar um celeiro de desenvolvimento e captação de talentos na
+                    área de Tecnologia da Informação (TI) na região para atender as necessidades de um mercado que cada
+                    dia mais necessita de profissionais com esse perfil de formação. Estimativas da Brascom mostram que
+                    para cada 7 vagas disponíveis na área de TI, há apenas 4,6 profissionais prontos para assumi-las, ou
+                    seja, faltam profissionais para atender essa demanda. Até 2024, devem ser necessárias mais 400 mil
+                    vagas para suprir essa necessidade.</p>
+
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <iframe src="https://www.youtube.com/embed/hWJGWSQuN0k" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            <h1>Sobre o Moura Tech</h1>
+        </div>
+        <div class="section" id="section4">
+            <div class="intro">
+                <img src="banner01.jpeg" alt="Logo Moura Tech" />
+                <p>Desenhado para atender as tecnologias de desenvolvimento com grande aceitação do mercado atual, tais
+                    como HTML,CSS
+                    Node.JS
+                    Express.JS
+                    React
+                    ReactNative </p>
+                <p>Com profissionais qualificados e experiência na área de desenvolvimento.</p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        /*
+        * Plugin intialization
+        */
+        $('#pagepiling').pagepiling({
+            menu: '#menu',
+            anchors: ['section1', 'section2', 'section3', 'section4'],
+            sectionsColor: ['white', '#116aac', '#f3cc0d', '#f7f7f7'],
+            navigation: {
+                'position': 'right',
+                'tooltips': ['Inicial', 'O projeto', 'Vídeo', 'Sobre']
+            },
+            afterRender: function () {
+                $('#pp-nav').addClass('custom');
+            },
+            afterLoad: function (anchorLink, index) {
+                if (index > 1) {
+                    $('#pp-nav').removeClass('custom');
+                } else {
+                    $('#pp-nav').addClass('custom');
+                }
+            }
+        });
+
+
+        /*
+        * Internal use of the demo website
+        */
+        $('#showExamples').click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $('#examplesList').toggle();
+        });
+
+        $('html').click(function () {
+            $('#examplesList').hide();
+        });
+    });
+</script>
+
+</html>
